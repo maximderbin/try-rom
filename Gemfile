@@ -1,16 +1,18 @@
 source 'https://rubygems.org'
 
 ruby '2.4.0'
-#ruby-gemset=better_feedback
+#ruby-gemset=tryrom
 
 rails_version = '5.0.1'
 %w(railties actionview actionpack).each do |name|
   gem name, rails_version
 end
 
+gem 'pg'
 gem 'rom-rails'
 gem 'rom-repository'
-gem 'rom-http', git: 'https://github.com/rom-rb/rom-http'
+gem 'rom-sql'
+gem 'rom-http', git: 'git@github.com:rom-rb/rom-http.git'
 gem 'puma', '~> 3.0'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webmock'

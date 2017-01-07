@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/rom-rb/rom-http
+  remote: git@github.com:rom-rb/rom-http.git
   revision: 103a291cfcfe9e1db7987095e1e530afaa40b4d3
   specs:
     rom-http (0.5.0)
@@ -81,6 +81,7 @@ GEM
     minitest (5.10.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pg (0.19.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -134,12 +135,20 @@ GEM
       rom (~> 2.0)
       rom-mapper (~> 0.4)
       rom-support (~> 2.0)
+    rom-sql (0.9.1)
+      dry-core (~> 0.2)
+      dry-equalizer (~> 0.2)
+      dry-types (~> 0.9)
+      rom (~> 2.0)
+      rom-support (~> 2.0)
+      sequel (~> 4.25)
     rom-support (2.0.0)
       concurrent-ruby (~> 1.0)
       dry-equalizer (~> 0.2)
       transproc (~> 0.4.0)
       wisper (~> 1.6, >= 1.6.0)
     safe_yaml (1.0.4)
+    sequel (4.42.0)
     slop (3.6.0)
     thor (0.19.4)
     thread_safe (0.3.5)
@@ -164,12 +173,14 @@ DEPENDENCIES
   actionpack (= 5.0.1)
   actionview (= 5.0.1)
   byebug
+  pg
   pry-rails
   puma (~> 3.0)
   railties (= 5.0.1)
   rom-http!
   rom-rails
   rom-repository
+  rom-sql
   tzinfo-data
   webmock
 

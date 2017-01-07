@@ -28,12 +28,13 @@ class ResponseHandler
 end
 
 ROM::Rails::Railtie.configure do |config|
-  config.gateways[:default] = [:http, {
+  config.gateways[:default] = [:sql, 'postgres://localhost']
+  config.gateways[:http] = [:http,
     uri: 'https://foo.com',
     headers: {
       Accept: 'application/json'
     },
     request_handler: RequestHandler.new,
     response_handler: ResponseHandler.new
-  }]
+  ]
 end
