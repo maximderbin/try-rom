@@ -1,5 +1,5 @@
 class ContactRepository < ROM::Repository[:contacts]
   def [](id)
-    Contact.build.call(contacts.relation.by_id(id)).first
+    contacts.relation.by_id(id).one!
   end
 end

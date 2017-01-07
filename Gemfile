@@ -10,7 +10,7 @@ end
 
 gem 'rom-rails'
 gem 'rom-repository'
-gem 'rom-http'
+gem 'rom-http', git: 'https://github.com/rom-rb/rom-http'
 gem 'puma', '~> 3.0'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webmock'
