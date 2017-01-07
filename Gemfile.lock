@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/rom-rb/rom-http
+  revision: 103a291cfcfe9e1db7987095e1e530afaa40b4d3
+  specs:
+    rom-http (0.5.0)
+      concurrent-ruby
+      dry-core
+      dry-equalizer
+      rom
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -100,11 +110,6 @@ GEM
       dry-types (~> 0.8)
       rom-mapper (~> 0.4.0)
       rom-support (~> 2.0)
-    rom-http (0.5.0)
-      dry-equalizer
-      dry-types
-      rom (~> 2.0)
-      thread_safe
     rom-mapper (0.4.0)
       dry-equalizer (~> 0.2)
       rom-support (~> 2.0.0)
@@ -162,7 +167,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.0)
   railties (= 5.0.1)
-  rom-http
+  rom-http!
   rom-rails
   rom-repository
   tzinfo-data
