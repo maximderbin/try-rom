@@ -1,6 +1,6 @@
 WebMock.enable!
 WebMock
-  .stub_request(:get, 'http://foo.com/services/data/v20.0/sobjects/Contact/1')
+  .stub_request(:get, /http:\/\/foo.com\/services\/data\/v20.0\/sobjects\/Contact\/*/)
   .to_return(body: Rails.root.join('spec/fixtures/contact.json'))
 
 class RequestHandler
