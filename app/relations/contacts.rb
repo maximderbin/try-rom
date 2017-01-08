@@ -1,4 +1,6 @@
 class Contacts < ROM::Relation[:http]
+  gateway :http
+
   schema do
     attribute :Id, ROM::Types::Strict::String.meta(primary_key: true, alias: :id)
     attribute :IsDeleted, ROM::Types::Strict::Bool.meta(alias: :is_deleted)
