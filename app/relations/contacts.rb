@@ -31,4 +31,8 @@ class Contacts < ROM::Relation[:http]
       base_path: '/services/data/v20.0/sobjects/Contact',
       path: id.to_s)
   end
+
+  def for_user(users)
+    by_id(users.one![:contact_id])
+  end
 end
