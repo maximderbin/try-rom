@@ -1,5 +1,8 @@
 class Contacts < ROM::Relation[:http]
   gateway :http
+  dataset do
+    with_base_path('/services/data/v20.0/sobjects/Contact')
+  end
 
   schema do
     attribute :Id, ROM::Types::Strict::String.meta(primary_key: true, alias: :id)
@@ -27,9 +30,7 @@ class Contacts < ROM::Relation[:http]
   end
 
   def by_id(id)
-    with_options(
-      base_path: '/services/data/v20.0/sobjects/Contact',
-      path: id.to_s)
+    append_path(id.to_s)
   end
 
   def for_user(users)
