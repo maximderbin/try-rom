@@ -1,6 +1,6 @@
 WebMock.enable!
 WebMock
-  .stub_request(:get, /http:\/\/foo.com\/services\/data\/v20.0\/sobjects\/Contact\/*/)
+  .stub_request(:any, /http:\/\/foo.com\/services\/data\/v20.0\/sobjects\/Contact\/*/)
   .to_return(body: Rails.root.join('spec/fixtures/contact.json'))
 
 class RequestHandler
@@ -23,7 +23,14 @@ end
 
 class ResponseHandler
   def call(response, dataset)
-    Array([JSON.parse(response.body, symbolize_names: true)]).flatten
+    if %i(post put patch).include?(dataset.request_method)
+      # FIXME: temporary hack to make rom-sql associations work
+      JSON.parse(response.body, symbolize_names: true).tap do |r|
+        r[:id] = r[:Id]
+      end
+    else
+      Array([JSON.parse(response.body, symbolize_names: true)]).flatten
+    end
   end
 end
 

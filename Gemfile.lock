@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:rom-rb/rom-http.git
-  revision: a0abf01d281602facfe1e9189571cf169e7e939d
+  revision: ebcdf5f6e347f3fc7b988e2a6b45a5df98f3128f
   specs:
     rom-http (0.5.0)
       concurrent-ruby
@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: git@github.com:rom-rb/rom-sql.git
-  revision: 818dc6be646ad0b869470f30622bfece811c8af8
+  revision: e1d5a16fb5bf3f40221ce6b87c5fb4c193fb6bf1
   specs:
     rom-sql (1.0.0.beta2)
       dry-core (~> 0.2, >= 0.2.3)
@@ -45,7 +45,7 @@ GIT
 
 GIT
   remote: git@github.com:rom-rb/rom.git
-  revision: 604baf6c86332a5ff317577fd2ff88a368470e8c
+  revision: a7386e430066684a8385f2ed7c33bf3c4813f824
   specs:
     rom (3.0.0.beta2)
       concurrent-ruby (~> 1.0)
