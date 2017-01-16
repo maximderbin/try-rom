@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:rom-rb/rom-http.git
-  revision: ebcdf5f6e347f3fc7b988e2a6b45a5df98f3128f
+  revision: 6118a94a627663c29c4602ec6f4dcf25d354b7a9
   specs:
     rom-http (0.5.0)
       concurrent-ruby

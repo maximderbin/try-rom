@@ -24,10 +24,7 @@ end
 class ResponseHandler
   def call(response, dataset)
     if %i(post put patch).include?(dataset.request_method)
-      # FIXME: temporary hack to make rom-sql associations work
-      JSON.parse(response.body, symbolize_names: true).tap do |r|
-        r[:id] = r[:Id]
-      end
+      JSON.parse(response.body, symbolize_names: true)
     else
       Array([JSON.parse(response.body, symbolize_names: true)]).flatten
     end
